@@ -7,6 +7,7 @@
 #define FALSE 0
 #define INDENT "    "
 
+void mode1(char *argv, stack_t* st, int indent);;
 // TODO: Function declarations here for ls2
 
 #endif

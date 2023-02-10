@@ -9,11 +9,10 @@
  */
 int main(int argc, char* argv[]) {
 	// stack stores the lines to print out
+	
 	stack_t *s = initstack();
-
-	push(s, "Hello1");
-	push(s, "Hello2");
-	push(s, "Hello3");
+	mode1(argv[1], s, 0);
+	
 
 	// print stack
 	printstack(s);
