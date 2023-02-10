@@ -35,8 +35,8 @@ void mode1(char *argv, stack_t* st, int indent){
           lstat(entry->d_name, &info);
           //check if entry is directory 
           if(entry->d_type  == DT_DIR) {
-            snprintf(bufstr, sizeof(bufstr), "%s%s/ (Directory)", indentStr, entry->d_name);
-            snprintf(test, sizeof(test), "%s/%s", argv, entry->d_name);
+            sprintf(bufstr, "%s%s/ (Directory)", indentStr, entry->d_name);
+            sprintf(test, "%s/%s", argv, entry->d_name);
             char *tmp = (char*) malloc(sizeof(bufstr));
             strcpy(tmp, strdup(bufstr));
             push(st,tmp);
@@ -44,7 +44,7 @@ void mode1(char *argv, stack_t* st, int indent){
          }
          //check if entry is file
          else if(S_ISREG(info.st_mode)){
-           snprintf(bufstr, sizeof(bufstr), "%s%s/ (%ld bytes)", indentStr, entry->d_name, info.st_size);
+           sprintf(bufstr, "%s%s/ (%ld bytes)", indentStr, entry->d_name, info.st_size);
            char *tmp = (char*) malloc(sizeof(bufstr));
            strcpy(tmp, strdup(bufstr));
            push(st,tmp);
